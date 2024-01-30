@@ -25,13 +25,13 @@ class MainActivity : ComponentActivity() {
         }
 
         val mainSleepBtn = findViewById<Button>(R.id.main_sleep_btn)
-        mainWorkoutBtn.setOnClickListener {
+        mainSleepBtn.setOnClickListener {
             val intent = Intent(this@MainActivity, SleepActivity::class.java)
             startActivity(intent)
         }
 
         val mainHeartbeatBtn = findViewById<Button>(R.id.main_heartbeat_btn)
-        mainWorkoutBtn.setOnClickListener {
+        mainHeartbeatBtn.setOnClickListener {
             val intent = Intent(this@MainActivity, HeartbeatActivity::class.java)
             startActivity(intent)
         }
