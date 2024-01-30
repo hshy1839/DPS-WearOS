@@ -6,28 +6,34 @@
 
 package com.example.dps_wearos.presentation
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.wear.compose.material.MaterialTheme
-import androidx.wear.compose.material.Text
 import com.example.dps_wearos.R
-import com.example.dps_wearos.presentation.theme.DPSWearOSTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.activity_main)
+
+        val mainWorkoutBtn = findViewById<Button>(R.id.main_workout_btn)
+        mainWorkoutBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, WorkoutActivity::class.java)
+            startActivity(intent)
+        }
+
+        val mainSleepBtn = findViewById<Button>(R.id.main_sleep_btn)
+        mainWorkoutBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, SleepActivity::class.java)
+            startActivity(intent)
+        }
+
+        val mainHeartbeatBtn = findViewById<Button>(R.id.main_heartbeat_btn)
+        mainWorkoutBtn.setOnClickListener {
+            val intent = Intent(this@MainActivity, HeartbeatActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
